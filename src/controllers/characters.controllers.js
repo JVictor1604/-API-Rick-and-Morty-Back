@@ -1,7 +1,7 @@
-const charactersService = require("../services/characters.sevice");
+const charactersService = require("../services/characters.services");
 
 const findAllCharactersController = async (req, res) => {
-  const allcharacters = await charactersService.findcharCatersService();
+  const allcharacters = await charactersService.findCharatersService();
   if (allcharacters.length == 0) {
     return res
       .status(404)
@@ -10,32 +10,32 @@ const findAllCharactersController = async (req, res) => {
   res.send(allcharacters);
 };
 
-const findByIdCharactersController = async (req, res) => {
+const findByIdCharacterController = async (req, res) => {
   const idParam = req.params.id;
-  const chosenCharacter = await charactersService.findByIdCharactersService(idParam);
+  const chosenCharacter = await charactersService.findByIdCharacterService(idParam);
   if (!chosenCharacter) {
     return res.status(404).send({ message: "Pesonagem não encontrado!" });
   }
   res.send(chosenCharacter);
 };
 
-const createCharactersController = async (req, res) => {
+const createCharacterController = async (req, res) => {
   const Character = req.body;
-  const newCharacter = await charactersService.createcharactersService(Character);
+  const newCharacter = await charactersService.createCharactersService(Character);
   res.status(201).send(newCharacter);
 };
 
-const updateCharactersController = async (req, res) => {
+const updateCharacterController = async (req, res) => {
   const idParam = req.params.id;
   const editCharacter = req.body;
   const updatedCharacter = await charactersService.updateCharactersService(
     idParam,
     editCharacter
   );
-  res.send(updatedPerson);
+  res.send(updatedCharacter);
 };
 
-const deleteCharactersController = async (req, res) => {
+const deleteCharacterController = async (req, res) => {
   const idParam = req.params.id;
   await charactersService.deleteCharactersService(idParam);
   res.send({ message: "Personagem deletado com sucesso!" });
@@ -43,8 +43,8 @@ const deleteCharactersController = async (req, res) => {
 
 module.exports = {
   findAllCharactersController,
-  findByIdCharactersController,
-  createCharactersController,
-  updateCharactersController,
-  deleteCharactersController,
+  findByIdCharacterController,
+  createCharacterController,
+  updateCharacterController,
+  deleteCharacterController,
 };
