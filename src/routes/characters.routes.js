@@ -1,4 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const route = require("express").Router();
+const controllerMatrix = require("../controllers/characters.controllers");
+// const {validId, validObjectBody } = require('../middlewares/person.middleware');
 
-const charactersControllers = require('../controllers/characters.controllers');
+route.get("/characters?limit=8&offset="+offset, controllerMatrix.findAllMatrixController);
+route.get("/characters/find/" + id, controllerMatrix.findByIdPersonController);
+route.post("/characters/create", controllerMatrix.createPersonController);
+route.put("/characters/update/" + id, controllerMatrix.updatePersonController);
+route.delete("/characters/delete/" + id, controllerMatrix.deletePersonController);
+
+module.exports = route;
