@@ -1,0 +1,22 @@
+{
+  "name": "-api-rick-and-morty-back",
+  "version": "1.0.0",
+  "description": "API With Characters of Rick and Morty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JVictor1604/-API-Rick-and-Morty-Back.git"
+  },
+  "author": "J Victor and Thiago Lino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JVictor1604/-API-Rick-and-Morty-Back/issues"
+  },
+  "homepage": "https://github.com/JVictor1604/-API-Rick-and-Morty-Back#readme",
+  "dependencies": {
+    "node": "^17.7.2"
+  }
+}
