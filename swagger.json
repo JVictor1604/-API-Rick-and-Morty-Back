@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "/todos": {
+      "/characters": {
         "get": {
           "summary": "Lista de todos os personagens",
           "description": "Rota responsável por listar todas as paletas",
@@ -45,7 +45,7 @@
           }
         }
       },
-      "/person/{id}": {
+      "/characters/find/{id}": {
         "get": {
           "summary": "Busca uma paleta pelo ID",
           "description": "Rota responsável por buscar uma personagem pelo ID",
