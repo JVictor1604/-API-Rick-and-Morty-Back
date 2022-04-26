@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "modulo-novo-3",
   "version": "1.0.0",
   "description": "",
@@ -18,6 +19,31 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+=======
+  "name": "-api-rick-and-morty-back",
+  "version": "1.0.0",
+  "description": "API With Characters of Rick and Morty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JVictor1604/-API-Rick-and-Morty-Back.git"
+  },
+  "author": "J Victor and Thiago Lino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JVictor1604/-API-Rick-and-Morty-Back/issues"
+  },
+  "homepage": "https://github.com/JVictor1604/-API-Rick-and-Morty-Back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "node": "^17.7.2",
+>>>>>>> 08b6ecf230e3adb9139f0da7d7df571cd3f079cb
     "nodemon": "^2.0.15"
   }
 }
