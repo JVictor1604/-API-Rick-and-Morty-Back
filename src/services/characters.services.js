@@ -11,13 +11,13 @@ const findByIdCharacterService = async (id) => {
   return character;
 };
 
-const createCharacterService = async (newPerson) => {
-  const characterCriada = await character.create(newPerson);
+const createCharacterService = async (newCharacter) => {
+  const characterCriada = await character.create(newCharacter);
   return characterCriada;
 };
 
-const updateCharacterService = async (id, PersonEdited) => {
-  const characterAtualizada = await character.findByIdAndUpdate(id, PersonEdited);
+const updateCharacterService = async (id, CharacterEdited) => {
+  const characterAtualizada = await character.findByIdAndUpdate(id, CharacterEdited);
   return characterAtualizada;
 };
 
