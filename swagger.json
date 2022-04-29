@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
       "title": "Rick and Morty",
-      "description": "API crud Rick and Morty",
+      "description": "API crud Rick and Mortit",
       "termsOfService": "",
       "contact": {
         "email": "nascilino@gmail.com.br"
@@ -16,7 +16,7 @@
       },
       {
         "url": "",
-        "description": "API de produção"
+        "description": ""
       }
     ],
     "paths": {
