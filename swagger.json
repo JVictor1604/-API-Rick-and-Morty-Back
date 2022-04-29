@@ -164,7 +164,7 @@
           }
         }
       },
-      "characters/delete/{id}": {
+      "/characters/delete/{id}": {
         "delete": {
           "summary": "Apagar um personagem de Rick and Morty pelo ID",
           "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
