@@ -1,3 +1,4 @@
+const Characters = require('../models/Characters.js');
 const character = require('../models/Characters.js');
 
 const findCharactersService = async () => {
@@ -7,7 +8,7 @@ const findCharactersService = async () => {
 };
 
 const findByIdCharacterService = async (id) => {
-  const character = await character.findById(id);
+  const character = await Characters.findById(id);
   return character;
 };
 
