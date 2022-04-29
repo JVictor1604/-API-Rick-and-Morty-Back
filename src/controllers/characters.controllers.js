@@ -1,7 +1,7 @@
 const charactersService = require("../services/characters.services");
 
 const findAllCharactersController = async (req, res) => {
-  const allcharacters = await charactersService.findCharatersService();
+  const allcharacters = await charactersService.findCharactersService();
   if (allcharacters.length == 0) {
     return res
       .status(404)
@@ -21,14 +21,14 @@ const findByIdCharacterController = async (req, res) => {
 
 const createCharacterController = async (req, res) => {
   const Character = req.body;
-  const newCharacter = await charactersService.createCharactersService(Character);
+  const newCharacter = await charactersService.createCharacterService(Character);
   res.status(201).send(newCharacter);
 };
 
 const updateCharacterController = async (req, res) => {
   const idParam = req.params.id;
   const editCharacter = req.body;
-  const updatedCharacter = await charactersService.updateCharactersService(
+  const updatedCharacter = await charactersService.updateCharacterService(
     idParam,
     editCharacter
   );
@@ -37,7 +37,7 @@ const updateCharacterController = async (req, res) => {
 
 const deleteCharacterController = async (req, res) => {
   const idParam = req.params.id;
-  await charactersService.deleteCharactersService(idParam);
+  await charactersService.deleteCharacterService(idParam);
   res.send({ message: "Personagem deletado com sucesso!" });
 };
 
