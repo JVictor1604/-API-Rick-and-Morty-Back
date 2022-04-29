@@ -90,7 +90,7 @@
                 "examples": {
                   "Personage": {
                     "value": {
-                        "name": "Morty Smith",
+                        "name": "Morty Smith novo",
                         "url": "https://rickandmortyapi.com/api/location/3"
                     }
                   }
