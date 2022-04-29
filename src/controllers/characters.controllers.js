@@ -1,7 +1,7 @@
 const charactersService = require("../services/characters.services");
 
 const findAllCharactersController = async (req, res) => {
-  const allcharacters = await charactersService.findCharatersService();
+  const allcharacters = await charactersService.findCharactersService();
   if (allcharacters.length == 0) {
     return res
       .status(404)
