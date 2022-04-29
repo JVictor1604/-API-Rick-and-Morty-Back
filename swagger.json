@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
       "title": "Rick and Morty",
-      "description": "API crud Rick and Mortit",
+      "description": "API crud Rick and Morty",
       "termsOfService": "",
       "contact": {
         "email": "nascilino@gmail.com.br"
@@ -85,7 +85,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paletas"
+                  "$ref": "#/components/schemas/Personagens"
                 },
                 "examples": {
                   "Personage": {
@@ -108,7 +108,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": "#/components/schemas/Paletas"
+                    "$ref": "#/components/schemas/Ppersonagens"
                   }
                 }
               }
@@ -125,7 +125,7 @@
             {
               "name": "id",
               "in": "path",
-              "description": "Id da paleta para a busca",
+              "description": "Id do personagem para a busca",
               "required": true
             }
           ],
@@ -133,7 +133,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paletas"
+                  "$ref": "#/components/schemas/Personagens"
                 },
                 "examples": {
                   "Paletas": {
@@ -156,7 +156,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": "#/components/schemas/Paletas"
+                    "$ref": "#/components/schemas/Personagens"
                   }
                 }
               }
