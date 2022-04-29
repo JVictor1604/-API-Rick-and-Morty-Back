@@ -24,7 +24,7 @@
         "get": {
           "summary": "Lista de todos os personagens",
           "description": "Rota responsável por listar todas os personagens de Rick and MOrty",
-          "tags": ["Personagens"],
+          "tags": ["Personagem"],
           "responses": {
             "404": {
               "description": "Not Found"
@@ -168,7 +168,7 @@
         "delete": {
           "summary": "Apagar um personagem de Rick and Morty pelo ID",
           "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
-          "tags": ["Personagens"],
+          "tags": ["Personagem"],
           "parameters": [
             {
               "name": "id",
