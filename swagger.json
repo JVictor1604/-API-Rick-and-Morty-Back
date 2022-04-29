@@ -136,7 +136,7 @@
                   "$ref": ""
                 },
                 "examples": {
-                  "Paletas": {
+                  "pesonagem": {
                     "value": {
                       "name": "Morty Smith editado",
                       "url": "https://rickandmortyapi.com/api/location/3"
