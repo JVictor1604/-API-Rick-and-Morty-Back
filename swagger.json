@@ -13,8 +13,11 @@
       {
         "url": "http://localhost:3000",
         "description": "API de teste"
+      },
+      {
+        "url": "",
+        "description": ""
       }
-     
     ],
     "paths": {
       "/characters": {
