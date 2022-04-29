@@ -68,7 +68,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": "#/components/schemas/Paletas"
+                    "$ref": ""
                   }
                 }
               }
@@ -85,7 +85,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paletas"
+                  "$ref": ""
                 },
                 "examples": {
                   "Personage": {
@@ -108,7 +108,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": "#/components/schemas/Paletas"
+                    "$ref": ""
                   }
                 }
               }
@@ -125,7 +125,7 @@
             {
               "name": "id",
               "in": "path",
-              "description": "Id da paleta para a busca",
+              "description": "Id para edição personagem",
               "required": true
             }
           ],
@@ -133,7 +133,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paletas"
+                  "$ref": ""
                 },
                 "examples": {
                   "Paletas": {
@@ -156,7 +156,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": "#/components/schemas/Paletas"
+                    "$ref": ""
                   }
                 }
               }
