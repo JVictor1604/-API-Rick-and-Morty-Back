@@ -1,6 +1,6 @@
 const route = require("express").Router();
 const controllerCharacters = require("../controllers/characters.controllers");
-// const {validId, validObjectBody } = require('../middlewares/person.middleware');
+//const {validId, validObjectBody } = require('../middlewares/person.middleware');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../../swagger.json');
 
