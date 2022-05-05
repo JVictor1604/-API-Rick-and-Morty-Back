@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
       "title": "Rick and Morty",
-      "description": "API crud Rick and Mortit",
+      "description": "API crud Rick and Morty",
       "termsOfService": "",
       "contact": {
         "email": "nascilino@gmail.com.br"
@@ -68,7 +68,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": ""
+                    "$ref": "#/components/schemas/Paletas"
                   }
                 }
               }
@@ -85,12 +85,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": ""
+                  "$ref": "#/components/schemas/Personagens"
                 },
                 "examples": {
                   "Personage": {
                     "value": {
-                        "name": "Morty Smith novo",
+                        "name": "Morty Smith",
                         "url": "https://rickandmortyapi.com/api/location/3"
                     }
                   }
@@ -108,7 +108,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": ""
+                    "$ref": "#/components/schemas/Ppersonagens"
                   }
                 }
               }
@@ -125,7 +125,7 @@
             {
               "name": "id",
               "in": "path",
-              "description": "Id para edição personagem",
+              "description": "Id do personagem para a busca",
               "required": true
             }
           ],
@@ -133,10 +133,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": ""
+                  "$ref": "#/components/schemas/Personagens"
                 },
                 "examples": {
-                  "pesonagem": {
+                  "Paletas": {
                     "value": {
                       "name": "Morty Smith editado",
                       "url": "https://rickandmortyapi.com/api/location/3"
@@ -156,7 +156,7 @@
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "$ref": ""
+                    "$ref": "#/components/schemas/Personagens"
                   }
                 }
               }
@@ -164,7 +164,7 @@
           }
         }
       },
-      "/characters/delete/{id}": {
+      "characters/delete/{id}": {
         "delete": {
           "summary": "Apagar um personagem de Rick and Morty pelo ID",
           "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
