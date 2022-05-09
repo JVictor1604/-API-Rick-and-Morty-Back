@@ -1,5 +1,7 @@
 const userService = require("./users.service");
-const authService = require("../auth/auth.service")
+const authService = require("../auth/auth.service");
+
+
 const createUserController = async (req, res) => {
   const { username, name, email, password, avatar } = req.body;
 
@@ -40,6 +42,7 @@ const createUserController = async (req, res) => {
     token,
   });
 };
+
 
 const findAllUserController = async (req, res) => {
   const users = await userService.findAllUserService();
