@@ -43,10 +43,5 @@ module.exports = {
   createCharacterService,
   updateCharacterService,
   deleteCharacterService,
-<<<<<<< HEAD
   searchCharacters,
 };
-=======
-  findByNameCharacterService,
-};
->>>>>>> d36d7d8c199453f4ef8274eeb8f03ee2806fe588
