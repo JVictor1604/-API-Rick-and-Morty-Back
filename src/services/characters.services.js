@@ -17,12 +17,12 @@ const searchCharacters = (message) =>
   });
 
 const createCharacterService = async (newCharacter) => {
-  const characterCriada = await character.create(newCharacter);
+  const characterCriada = await Characters.create(newCharacter);
   return characterCriada;
 };
 
 const updateCharacterService = async (id, CharacterEdited) => {
-  const characterAtualizada = await character.findByIdAndUpdate(
+  const characterAtualizada = await Characters.findByIdAndUpdate(
     id,
     CharacterEdited
   );
@@ -30,7 +30,7 @@ const updateCharacterService = async (id, CharacterEdited) => {
 };
 
 const deleteCharacterService = async (id) => {
-  return await character.findByIdAndDelete(id);
+  return await Characters.findByIdAndDelete(id);
 };
 
 module.exports = {
