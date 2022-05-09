@@ -3,9 +3,9 @@ const authService = require("../auth/auth.service");
 
 
 const createUserController = async (req, res) => {
-  const { username, name, email, password, avatar } = req.body;
+  const {name, username, email, password, avatar } = req.body;
 
-  if (!username || !name || !email || !password || !avatar) {
+  if (!name ||!username ||  !email || !password || !avatar) {
     return res.status(400).send({
       message:
         "Alguns campos estão faltando. Os campos são: 'username', 'name', email, 'password' ou 'avatar'",

@@ -10,6 +10,15 @@ const findAllCharactersController = async (req, res) => {
   res.send(allcharacters);
 };
 
+const findByNameCharacterController = async (req, res) => {
+  const nameParam = req.params.name;
+  const chosenCharacter = await charactersService.findByNameCharacterService(nameParam);
+  if (!chosenCharacter) {
+    return res.status(404).send({ message: "Pesonagem não encontrado!" });
+  }
+  res.send(chosenCharacter);
+};
+
 const findByIdCharacterController = async (req, res) => {
   const idParam = req.params.id;
   const chosenCharacter = await charactersService.findByIdCharacterService(idParam);
@@ -47,4 +56,5 @@ module.exports = {
   createCharacterController,
   updateCharacterController,
   deleteCharacterController,
+  findByNameCharacterController,
 };

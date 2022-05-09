@@ -8,6 +8,7 @@ route.use('/api-docs', swaggerUi.serve);
 route.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 route.get("/characters", controllerCharacters.findAllCharactersController);
+route.get("/characters/find/:name", controllerCharacters.findByNameCharacterController);
 route.get("/characters/find/:id", controllerCharacters.findByIdCharacterController);
 route.post("/characters/create", controllerCharacters.createCharacterController);
 route.put("/characters/update/:id", controllerCharacters.updateCharacterController);
