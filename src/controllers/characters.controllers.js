@@ -1,3 +1,4 @@
+const Characters = require("../models/Characters");
 const charactersService = require("../services/characters.services");
 
 const findAllCharactersController = async (req, res) => {
@@ -17,6 +18,27 @@ const findByIdCharacterController = async (req, res) => {
     return res.status(404).send({ message: "Pesonagem não encontrado!" });
   }
   res.send(chosenCharacter);
+};
+
+const searchCharactersController = async (req, res) => {
+  const { message } = req.query;
+
+  const personagens = await charactersService.searchCharacters(message);
+
+  if (Characters.length === 0) {
+    return res
+      .status(400)
+      .send({ message: "Não existem personagens com essa mensagem!" });
+  }
+
+  return res.send({
+    personagens: personagens.map((personagem) => ({
+      name: personagem.name,
+      url: personagem.url
+    })),
+});
+
+
 };
 
 const createCharacterController = async (req, res) => {
@@ -47,4 +69,5 @@ module.exports = {
   createCharacterController,
   updateCharacterController,
   deleteCharacterController,
+  searchCharactersController
 };
