@@ -1,4 +1,4 @@
-const User = require("../model/User");
+const User = require("../Models/User");
 
 const findByIdUserService = (idUser) => User.findById(idUser);
 
