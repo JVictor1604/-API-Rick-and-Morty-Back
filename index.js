@@ -20,8 +20,7 @@ app.use("/auth", authRoutes);
 
 
 app.use(routes);
-app.use(userRoutes);
-app.use(authRoutes);
+
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
