@@ -5,10 +5,6 @@ const findCharactersService = async () => {
   const characters = await character.find();
   return characters;
 };
-const findByNameCharacterService = async (name) => {
-  const character = await Characters.findByName(name);
-  return character;
-};
 
 const findByIdCharacterService = async (id) => {
   const character = await Characters.findById(id);
