@@ -1,192 +1,260 @@
 {
-    "openapi": "3.0.0",
-    "info": {
-      "title": "Rick and Morty",
-      "description": "API crud Rick and Morty",
-      "termsOfService": "",
-      "contact": {
-        "email": "nascilino@gmail.com.br"
-      },
-      "version": "1.0.0"
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Rick and Morty",
+    "description": "API crud Rick and Morty",
+    "termsOfService": "",
+    "contact": {
+      "email": "nascilino@gmail.com.br"
     },
-    "servers": [
-      {
-        "url": "http://localhost:3000",
-        "description": "API de teste"
-      },
-      {
-        "url": "",
-        "description": ""
-      }
-    ],
-    "paths": {
-      "/characters": {
-        "get": {
-          "summary": "Lista de todos os personagens",
-          "description": "Rota responsável por listar todas os personagens de Rick and MOrty",
-          "tags": ["Personagem"],
-          "responses": {
-            "404": {
-              "description": "Not Found"
-            },
-            "200": {
-              "description": "OK",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": ""
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/characters/find/{id}": {
-        "get": {
-          "summary": "Busca um personagem pelo ID",
-          "description": "Rota responsável por buscar uma personagem de Rick and Morty pelo ID",
-          "tags": ["Personagem"],
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "description": "Id do personagem",
-              "required": true
-            }
-          ],
-          "responses": {
-            "400": {
-              "description": "Bad Request"
-            },
-            "200": {
-              "description": "OK",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "$ref": "#/components/schemas/Paletas"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/characters/create": {
-        "post": {
-          "summary": "Cadastrar um personagem",
-          "description": "Rota responsável por cadastrar um personagem de Rick and Morty",
-          "tags": ["Personagem"],
-          "requestBody": {
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "API de teste"
+    },
+    {
+      "url": "",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/characters": {
+      "get": {
+        "summary": "Lista de todos os personagens",
+        "description": "Rota responsável por listar todas os personagens de Rick and MOrty",
+        "tags": ["Personagem"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Personagens"
-                },
-                "examples": {
-                  "Personage": {
-                    "value": {
-                        "name": "Morty Smith",
-                        "url": "https://rickandmortyapi.com/api/location/3"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": ""
                   }
                 }
               }
-            }
-          },
-          "responses": {
-            "400": {
-              "description": "Bad Request"
-            },
-            "201": {
-              "description": "Created",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "$ref": "#/components/schemas/Ppersonagens"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/characters/update/{id}": {
-        "put": {
-          "summary": "Editar um personagem do Rick and Morty pelo ID",
-          "description": "Rota responsável por editar um personagem do Rick and Morty pelo ID",
-          "tags": ["Personagem"],
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "description": "Id do personagem para a busca",
-              "required": true
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Personagens"
-                },
-                "examples": {
-                  "Paletas": {
-                    "value": {
-                      "name": "Morty Smith editado",
-                      "url": "https://rickandmortyapi.com/api/location/3"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "responses": {
-            "400": {
-              "description": "Bad Request"
-            },
-            "200": {
-              "description": "OK",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "$ref": "#/components/schemas/Personagens"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "characters/delete/{id}": {
-        "delete": {
-          "summary": "Apagar um personagem de Rick and Morty pelo ID",
-          "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
-          "tags": ["Personagem"],
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "description": "Id do personagem para deleção",
-              "required": true
-            }
-          ],
-          "responses": {
-            "400": {
-              "description": "Bad Request"
-            },
-            "200": {
-              "description": "OK"
             }
           }
         }
       }
-            
+    },
+    "/characters/find/{id}": {
+      "get": {
+        "summary": "Busca um personagem pelo ID",
+        "description": "Rota responsável por buscar uma personagem de Rick and Morty pelo ID",
+        "tags": ["Personagem"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagem",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Paletas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/create": {
+      "post": {
+        "summary": "Cadastrar um personagem",
+        "description": "Rota responsável por cadastrar um personagem de Rick and Morty",
+        "tags": ["Personagem"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagens"
+              },
+              "examples": {
+                "Personage": {
+                  "value": {
+                    "name": "Morty Smith",
+                    "url": "https://rickandmortyapi.com/api/location/3"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Ppersonagens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/update/{id}": {
+      "put": {
+        "summary": "Editar um personagem do Rick and Morty pelo ID",
+        "description": "Rota responsável por editar um personagem do Rick and Morty pelo ID",
+        "tags": ["Personagem"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagem para a busca",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagens"
+              },
+              "examples": {
+                "Paletas": {
+                  "value": {
+                    "name": "Morty Smith editado",
+                    "url": "https://rickandmortyapi.com/api/location/3"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "characters/delete/{id}": {
+      "delete": {
+        "summary": "Apagar um personagem de Rick and Morty pelo ID",
+        "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
+        "tags": ["Personagem"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagem para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "/users/": {
+    "get": {
+      "summary": "Lista de todos os usuários",
+      "description": "Rota responsável por listar todas os Usuários",
+      "tags": ["User"],
+      "responses": {
+        "404": {
+          "description": "Not Found"
+        },
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "/users/": {
+    "post": {
+      "summary": "Cadastrar um novo usuário",
+      "description": "Rota responsável por cadastrar um novo usuário",
+      "tags": ["Users"],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": ""
+            },
+            "examples": {
+              "Personage": {
+                "value": {
+                  "_id": "627994627532fcd299bf08f2",
+                  "name": "Leonardo 4",
+                  "username": "ruiz4856",
+                  "email": "leonardo@89blue.com",
+                  "avatar": "teste avatar"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "400": {
+          "description": "Bad Request"
+        },
+        "201": {
+          "description": "Created",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": ""
+              }
+            }
+          }
+        }
+      }
     }
   }
+}
