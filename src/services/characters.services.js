@@ -1,10 +1,9 @@
-const Characters = require('../models/Characters.js');
-const character = require('../models/Characters.js');
+const Characters = require("../models/Characters.js");
+const character = require("../models/Characters.js");
 
 const findCharactersService = async () => {
   const characters = await character.find();
   return characters;
-  
 };
 const findByNameCharacterService = async (name) => {
   const character = await Characters.findByName(name);
@@ -16,13 +15,21 @@ const findByIdCharacterService = async (id) => {
   return character;
 };
 
+const searchCharacters = (message) =>
+  Characters.find({
+    message: { $regex: `${message || ""}`, $options: "i" },
+  });
+
 const createCharacterService = async (newCharacter) => {
   const characterCriada = await character.create(newCharacter);
   return characterCriada;
 };
 
 const updateCharacterService = async (id, CharacterEdited) => {
-  const characterAtualizada = await character.findByIdAndUpdate(id, CharacterEdited);
+  const characterAtualizada = await character.findByIdAndUpdate(
+    id,
+    CharacterEdited
+  );
   return characterAtualizada;
 };
 
@@ -36,5 +43,5 @@ module.exports = {
   createCharacterService,
   updateCharacterService,
   deleteCharacterService,
-  findByNameCharacterService,
+  searchCharacters,
 };
