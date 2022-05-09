@@ -1,5 +1,5 @@
-const Characters = require("../models/Characters.js");
-const character = require("../models/Characters.js");
+const Characters = require("../Models/characters.js");
+
 
 const findCharactersService = async () => {
   const characters = await character.find();
