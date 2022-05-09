@@ -2,7 +2,7 @@ const Characters = require("../Models/characters.js");
 
 
 const findCharactersService = async () => {
-  const characters = await character.find();
+  const characters = await characters.find();
   return characters;
 };
 
