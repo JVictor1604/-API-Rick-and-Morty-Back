@@ -32,11 +32,11 @@ const searchCharactersController = async (req, res) => {
   }
 
   return res.send({
-    personagens: personagens.map((personagem) => ({
+    characters: personagens.map((personagem) => ({
       name: personagem.name,
       url: personagem.url
     })),
-});
+}); 
 
 
 };

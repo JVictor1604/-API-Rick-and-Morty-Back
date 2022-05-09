@@ -13,7 +13,7 @@ const findByIdCharacterService = async (id) => {
 
 const searchCharacters = (message) =>
   Characters.find({
-    message: { $regex: `${message || ""}`, $options: "i" },
+    name: { $regex: `${message || ""}`, $options: "i" },
   });
 
 const createCharacterService = async (newCharacter) => {
