@@ -5,6 +5,10 @@ const findCharactersService = async () => {
   const characters = await character.find();
   return characters;
 };
+const findByNameCharacterService = async (name) => {
+  const character = await Characters.findByName(name);
+  return character;
+};
 
 const findByIdCharacterService = async (id) => {
   const character = await Characters.findById(id);
@@ -39,5 +43,10 @@ module.exports = {
   createCharacterService,
   updateCharacterService,
   deleteCharacterService,
+<<<<<<< HEAD
   searchCharacters,
 };
+=======
+  findByNameCharacterService,
+};
+>>>>>>> d36d7d8c199453f4ef8274eeb8f03ee2806fe588
