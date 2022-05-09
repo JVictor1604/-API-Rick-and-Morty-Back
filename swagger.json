@@ -68,7 +68,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Paletas"
+                  "$ref": ""
                 }
               }
             }
@@ -108,7 +108,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Ppersonagens"
+                  "$ref": ""
                 }
               }
             }
@@ -164,7 +164,7 @@
         }
       }
     },
-    "characters/delete/{id}": {
+    "/characters/delete/{id}": {
       "delete": {
         "summary": "Apagar um personagem de Rick and Morty pelo ID",
         "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
@@ -186,70 +186,71 @@
           }
         }
       }
-    }
-  },
-  "/users/": {
-    "get": {
-      "summary": "Lista de todos os usuários",
-      "description": "Rota responsável por listar todas os Usuários",
-      "tags": ["User"],
-      "responses": {
-        "404": {
-          "description": "Not Found"
-        },
-        "200": {
-          "description": "OK",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": ""
+    },
+
+    "/users": {
+      "get": {
+        "summary": "Lista de todos os usuários",
+        "description": "Rota responsável por listar todas os Usuários",
+        "tags": ["Users"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": ""
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-  },
+    },
 
-  "/users/": {
-    "post": {
-      "summary": "Cadastrar um novo usuário",
-      "description": "Rota responsável por cadastrar um novo usuário",
-      "tags": ["Users"],
-      "requestBody": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": ""
-            },
-            "examples": {
-              "Personage": {
-                "value": {
-                  "_id": "627994627532fcd299bf08f2",
-                  "name": "Leonardo 4",
-                  "username": "ruiz4856",
-                  "email": "leonardo@89blue.com",
-                  "avatar": "teste avatar"
+    "/users/create": {
+      "post": {
+        "summary": "Cadastrar um novo usuário",
+        "description": "Rota responsável por cadastrar um novo usuário",
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": ""
+              },
+              "examples": {
+                "Personage": {
+                  "value": {
+                    "_id": "627994627532fcd299bf08f2",
+                    "name": "Leonardo 4",
+                    "username": "ruiz4856",
+                    "email": "leonardo@89blue.com",
+                    "avatar": "teste avatar"
+                  }
                 }
               }
             }
           }
-        }
-      },
-      "responses": {
-        "400": {
-          "description": "Bad Request"
         },
-        "201": {
-          "description": "Created",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "$ref": ""
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": ""
+                }
               }
             }
           }
