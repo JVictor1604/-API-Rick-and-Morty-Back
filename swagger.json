@@ -25,10 +25,14 @@
         "summary": "Lista de todos os personagens",
         "description": "Rota responsável por listar todas os personagens de Rick and MOrty",
         "tags": ["Personagem"],
+        "security": [{ "bearerAuth": [] }],
         "responses": {
           "404": {
             "description": "Not Found"
           },
+
+          "401": { "description": "Unauthorized" },
+
           "200": {
             "description": "OK",
             "content": {
@@ -58,6 +62,7 @@
         "summary": "Busca um personagem pelo ID",
         "description": "Rota responsável por buscar uma personagem de Rick and Morty pelo ID",
         "tags": ["Personagem"],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -70,6 +75,7 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": { "description": "Unauthorized" },
           "200": {
             "description": "OK",
             "content": {
@@ -92,10 +98,11 @@
         "summary": "Busca um personagem pelo nome",
         "description": "Rota responsável por buscar uma personagem de Rick and Morty pelo nome",
         "tags": ["Personagem"],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "message",
-            "in": "path",
+            "in": "query",
             "description": "Nome do personagem",
             "required": true
           }
@@ -104,6 +111,10 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
+
           "200": {
             "description": "OK",
             "content": {
@@ -131,11 +142,12 @@
         "summary": "Cadastrar um personagem",
         "description": "Rota responsável por cadastrar um personagem de Rick and Morty",
         "tags": ["Personagem"],
+        "security": [{ "bearerAuth": [] }],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Personagens"
+                "$ref": ""
               },
               "examples": {
                 "Personagem": {
@@ -152,6 +164,7 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": { "description": "Unauthorized" },
           "201": {
             "description": "Created",
             "content": {
@@ -176,6 +189,7 @@
         "summary": "Editar um personagem do Rick and Morty pelo ID",
         "description": "Rota responsável por editar um personagem do Rick and Morty pelo ID",
         "tags": ["Personagem"],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -208,6 +222,7 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": { "description": "Unauthorized" },
           "200": {
             "description": "OK",
             "content": {
@@ -232,6 +247,7 @@
         "summary": "Apagar um personagem de Rick and Morty pelo ID",
         "description": "Rota responsável por apagar um personagem de Rick and Morty pelo ID",
         "tags": ["Personagem"],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -244,6 +260,7 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": { "description": "Unauthorized" },
           "200": {
             "description": "OK"
           }
@@ -286,12 +303,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": ""
               },
               "examples": {
                 "Personagem": {
                   "value": {
-                    "_id": "627994627532fcd299bf08f2",
                     "name": "Leonardo 4",
                     "username": "ruiz4856",
                     "email": "leonardo@89blue.com",
@@ -309,18 +325,19 @@
           "201": {
             "description": "Created",
             "content": {
-              "application/json": { "schema": {
-                "$ref": "#/components/schemas/User"
-              },
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                },
                 "examples": {
                   "Personagem": {
                     "value": {
-                        "_id": "627994627532fcd299bf08f2",
-                        "name": "Leonardo 4",
-                        "username": "ruiz4856",
-                        "email": "leonardo@89blue.com",
-                        "avatar": "teste avatar",
-                        "__v": 0
+                      "_id": "627994627532fcd299bf08f2",
+                      "name": "Leonardo 4",
+                      "username": "ruiz4856",
+                      "email": "leonardo@89blue.com",
+                      "avatar": "teste avatar",
+                      "__v": 0
                     }
                   }
                 }
@@ -339,9 +356,8 @@
         "requestBody": {
           "content": {
             "application/json": {
-
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": ""
               },
               "examples": {
                 "User": {
@@ -358,16 +374,15 @@
           "400": {
             "description": "Bad Request"
           },
-          "200":{
-
+          "200": {
             "description": "OK"
           },
-           "content": {
+          "content": {
             "application/json": {
               "examples": {
                 "Personagem": {
                   "value": {
-                      "token": "dsyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjOyNzlhNjhmMGRkMjVlZWE1OWRkZGEyOCIsImlhdCI6MTY1MjE0MDA3MSwiZXhwIjoxNjUyMjI2NDcxfQ.7p6w6TxIBd-pRrTC_PUR9D4QS2ZM25iX6B_QQARMnQU"
+                    "token": "dsyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjOyNzlhNjhmMGRkMjVlZWE1OWRkZGEyOCIsImlhdCI6MTY1MjE0MDA3MSwiZXhwIjoxNjUyMjI2NDcxfQ.7p6w6TxIBd-pRrTC_PUR9D4QS2ZM25iX6B_QQARMnQU"
                   }
                 }
               }
@@ -375,6 +390,39 @@
           }
         }
       }
+    }
+  },
+
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }, "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      }
+
+
     }
   }
 }
