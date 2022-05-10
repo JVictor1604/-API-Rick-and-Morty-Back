@@ -15,7 +15,7 @@ const findByIdCharacterController = async (req, res) => {
   const idParam = req.params.id;
   const chosenCharacter = await charactersService.findByIdCharacterService(idParam);
   if (!chosenCharacter) {
-    return res.status(404).send({ message: "Pesonagem não encontrado!" });
+    return res.status(404).send({ message: "Personagem não encontrado!" });
   }
   res.send(chosenCharacter);
 };
@@ -27,7 +27,7 @@ const searchCharactersController = async (req, res) => {
 
   if (Characters.length === 0) {
     return res
-      .status(400)
+      .status(404)
       .send({ message: "Não existem personagens com essa mensagem!" });
   }
 
