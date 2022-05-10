@@ -1,1 +1,1 @@
-# -API-Rick-and-Morty-Back
+# Sejam bem-vindos a API do Rick and Morty!! Aqui desenvolvemos uma API cuja principal função é criar uma autentificação para o usuário, que através da mesma poderá cadastrar personagens do Rick and Morty, assim como edita-los ou deleta-los. Fique a vontade para navegar pelo código e explorar o conhecimento junto conosco!!
