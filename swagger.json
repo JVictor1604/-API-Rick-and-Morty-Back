@@ -286,10 +286,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": ""
+                "$ref": "#/components/schemas/User"
               },
               "examples": {
-                "Personage": {
+                "Personagem": {
                   "value": {
                     "_id": "627994627532fcd299bf08f2",
                     "name": "Leonardo 4",
@@ -309,7 +309,9 @@
           "201": {
             "description": "Created",
             "content": {
-              "application/json": {
+              "application/json": { "schema": {
+                "$ref": "#/components/schemas/User"
+              },
                 "examples": {
                   "Personagem": {
                     "value": {
@@ -337,9 +339,12 @@
         "requestBody": {
           "content": {
             "application/json": {
-        
+
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
               "examples": {
-                "Email e Senha": {
+                "User": {
                   "value": {
                     "email": "leonardo@89blue.com",
                     "password": "BLUE2019"
@@ -353,7 +358,6 @@
           "400": {
             "description": "Bad Request"
           },
-
           "200":{
 
             "description": "OK"
