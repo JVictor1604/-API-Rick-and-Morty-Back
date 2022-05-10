@@ -7,7 +7,7 @@ const authMiddleware = require("../auth/auth.middleware");
 
 route.use("/api-docs",  swaggerUi.serve);
 route.get("/api-docs", swaggerUi.setup(swaggerDocument));
-route.get("/characters", controllerCharacters.findAllCharactersController);
+route.get("/characters", authMiddleware, controllerCharacters.findAllCharactersController);
 route.get(
   "/characters/find/:id", authMiddleware,
   controllerCharacters.findByIdCharacterController
