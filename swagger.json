@@ -37,6 +37,14 @@
                   "type": "array",
                   "items": {
                     "$ref": ""
+                  },
+                  "examples": {
+                    "Personagens": {
+                      "value": {
+                        "name": "Morty Smith",
+                        "url": "https://rickandmortyapi.com/api/location/3"
+                      }
+                    }
                   }
                 }
               }
@@ -66,9 +74,51 @@
             "description": "OK",
             "content": {
               "application/json": {
+                "examples": {
+                  "Personagens": {
+                    "value": {
+                      "_id": "627994627532fcd299bf08f2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/searchCharacters": {
+      "get": {
+        "summary": "Busca um personagem pelo nome",
+        "description": "Rota responsável por buscar uma personagem de Rick and Morty pelo nome",
+        "tags": ["Personagem"],
+        "parameters": [
+          {
+            "name": "message",
+            "in": "path",
+            "description": "Nome do personagem",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": ""
+                },
+
+                "examples": {
+                  "Personagens": {
+                    "value": {
+                      "name": "Morty"
+                    }
+                  }
                 }
               }
             }
@@ -88,7 +138,7 @@
                 "$ref": "#/components/schemas/Personagens"
               },
               "examples": {
-                "Personage": {
+                "Personagem": {
                   "value": {
                     "name": "Morty Smith",
                     "url": "https://rickandmortyapi.com/api/location/3"
@@ -106,9 +156,14 @@
             "description": "Created",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": ""
+                "examples": {
+                  "Personagem": {
+                    "value": {
+                      "name": "Morty Smith",
+                      "url": "https://rickandmortyapi.com/api/location/3",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -133,10 +188,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Personagens"
+                "$ref": ""
               },
               "examples": {
-                "Paletas": {
+                "Personagens": {
                   "value": {
                     "name": "Morty Smith editado",
                     "url": "https://rickandmortyapi.com/api/location/3"
@@ -147,6 +202,9 @@
           }
         },
         "responses": {
+          "404": {
+            "description": "Not Found"
+          },
           "400": {
             "description": "Bad Request"
           },
@@ -154,9 +212,14 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/Personagens"
+                "examples": {
+                  "Personagem": {
+                    "value": {
+                      "name": "Morty Smith",
+                      "url": "https://rickandmortyapi.com/api/location/3",
+                      "__v": 1
+                    }
+                  }
                 }
               }
             }
@@ -247,9 +310,61 @@
             "description": "Created",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": ""
+                "examples": {
+                  "Personagem": {
+                    "value": {
+                        "_id": "627994627532fcd299bf08f2",
+                        "name": "Leonardo 4",
+                        "username": "ruiz4856",
+                        "email": "leonardo@89blue.com",
+                        "avatar": "teste avatar",
+                        "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/auth/login": {
+      "post": {
+        "summary": "Fazer Login",
+        "description": "Rota responsável por fazer Login",
+        "tags": ["Autentificação"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+        
+              "examples": {
+                "Email e Senha": {
+                  "value": {
+                    "email": "leonardo@89blue.com",
+                    "password": "BLUE2019"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+
+          "200":{
+
+            "description": "OK"
+          },
+           "content": {
+            "application/json": {
+              "examples": {
+                "Personagem": {
+                  "value": {
+                      "token": "dsyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjOyNzlhNjhmMGRkMjVlZWE1OWRkZGEyOCIsImlhdCI6MTY1MjE0MDA3MSwiZXhwIjoxNjUyMjI2NDcxfQ.7p6w6TxIBd-pRrTC_PUR9D4QS2ZM25iX6B_QQARMnQU"
+                  }
                 }
               }
             }
