@@ -14,6 +14,13 @@
       "url": "http://localhost:3000",
       "description": "API de teste"
     },
+    
+    {
+      "url": "https://backrickandmortyblue2022.onrender.com/api-docs",
+      "description": "API de teste"
+    },
+
+    
     {
       "url": "",
       "description": ""
